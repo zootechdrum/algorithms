@@ -9,18 +9,18 @@
 function pairwise(arr, arg) {
     let sucessfulIndex = [];
     let ans = 0
-    
-    for(var i = 0; i < arr.length; i++){
-      for(var j = 1; j <arr.length && i !== j;  j++){
-        
-        if(arr[i] + arr[j] === arg && sucessfulIndex.indexOf(i) < 0 && sucessfulIndex.indexOf(j) < 0){
-          sucessfulIndex.push(i,j)
-          ans+= j + i
-          }
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr.length && i !== j; j++) {
+
+            if (arr[i] + arr[j] === arg && sucessfulIndex.indexOf(i) < 0 && sucessfulIndex.indexOf(j) < 0) {
+                sucessfulIndex.push(i, j)
+                ans += j + i
+            }
         }
-      }
-    
+    }
+
     return ans;
-  }
-  
-  pairwise([1, 4, 2, 3, 0, 5], 7)
+}
+
+pairwise([1, 4, 2, 3, 0, 5], 7)
