@@ -22,10 +22,10 @@ function sameFrequency(num1, num2){
       return false;
     }
     
-    for(const value of arr1){
+    for(let value of arr1){
       counter1[value] = (counter1[value] || 0) + 1;
     }
-    for(const value of arr2){
+    for(let value of arr2){
       counter2[value] = (counter2[value] || 0) + 1;
     }
     
