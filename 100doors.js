@@ -47,7 +47,15 @@ function getFinalOpenedDoors(numDoors) {
   
     }
   
-    return array1;
+    for ( var l = 0; l <= array1.length; l++){
+        if (array1[l] === true){
+            finalAnswer.push(check[l])
+        }
+        console.log("final Answer " + finalAnswer)
+    }
+  
+    return finalAnswer;
   }
   
   getFinalOpenedDoors(100);
+  
