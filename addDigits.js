@@ -17,7 +17,7 @@ function addNumber(num){
     for(var i = 0; i < convert.length; i++){
       answer += parseInt(convert[i])
     }
-    if( answer > 9) {
+    if( answer >= 9) {
       addNumber(answer)
     }else{
       console.log(answer)
