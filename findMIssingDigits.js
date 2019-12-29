@@ -7,17 +7,19 @@
  
 
 
- function missing(arr){
-     let answer = [];
+function missing(arr){
+    let answer = [];
+  //gets largest number in array
+    let maxNum = Math.max(...arr)
 
-     let sortedArr = arr.sort(function(a,b){return a - b})
+    for(let i = 0; i < arr.length; i++){
+        //if current number + 1 is not found in array and current number is not the biggest number
+        if(arr.indexOf(arr[i] + 1) === -1 && arr[i] !== maxNum){
+            //push into answer array current index and add one.
+            answer.push(arr[i] + 1)
+        }
+    }
+    return answer;
+}
 
-     for(let i = 0; i < sortedArr.length; i++){
-         //if integer + 1 minus current integer at index i is > 1
-         if(sortedArr[i + 1] - sortedArr[i] > 1){
-             //push into answer array current index and add one.
-             answer.push(sortedArr[i] + 1)
-         }
-     }
-     return answer;
- }
+missing([9,4,3,6,8,2])
