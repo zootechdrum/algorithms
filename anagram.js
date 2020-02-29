@@ -45,6 +45,7 @@ function anagram(str1, str2){
 
         freqCount1[val] = (freqCount1[val] || 0) + 1;
     }
+    console.log(freqCount1)
 
     for(let val of arr2){
         freqCount2[val] = (freqCount2[val] || 0) + 1;
