@@ -26,11 +26,6 @@ function areThereDuplicates(...args) {
     }
     return false;
 
-    //We need to conver arguments into an array
-
-    //We need to loop through the array
-    //We need to check each number individually and check if the rest of the numbers in the array are teh same
-
   }
 
   areThereDuplicates(1,2,3,6,4)
