@@ -43,22 +43,23 @@ function anagram(str1, str2){
         //If the value does not exist yet then it will show undefined
         //But because we have the or operator we set it to zero to have a value
 
-        freqCount1[val] = (freqCount1[val] || 0) + 1;s
+        freqCount1[val] = (freqCount1[val] || 0) + 1;
     }
 
     for(let val of arr2){
         freqCount2[val] = (freqCount2[val] || 0) + 1;
     }
-
+//loops through keys in freqCount1
     for(let key in freqCount1){
+        //If key does not exist in freqCount2 return false
         if(!(key in freqCount2)){
             return false
         }
+        //if the value of both keys are the same value return false
         if(freqCount2[key] !== freqCount1[key] ){
             return false
         }
     }
     return true;
 }
-
-anagram("anagram","nagaram")
+anagram("aaz","zza")
