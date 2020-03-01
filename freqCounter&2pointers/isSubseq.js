@@ -9,7 +9,7 @@ function isSubsequence(arg1, arg2) {
 
     //We want to make both arguments array
     let arr1 = arg1.split('');
-    let arr2 = arg2.split("");
+    let arr2 = arg2.split('');
 
     let i = 0;
     //We are going to loop through the second argument of our array
