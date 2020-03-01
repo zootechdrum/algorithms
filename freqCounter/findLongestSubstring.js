@@ -11,10 +11,18 @@ function findLongestSubstring(str){
 
     //Keep track of letters already iterated over
     let freqCounter = {};
+    let maxSubstring = 0
 
     for(let i = 0; i < arr.length; i++){
+
+        if(!freqCounter[arr[i]]){
+            freqCounter[arr[i]] = 1;
+        }else {
+            console.log(arr[i] + " already exists")
+        }
         
     }
+    console.log(freqCounter)
 
 }
 
