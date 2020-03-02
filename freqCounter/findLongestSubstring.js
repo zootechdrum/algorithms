@@ -11,20 +11,44 @@ function findLongestSubstring(str){
 
     //Keep track of letters already iterated over
     let freqCounter = {};
+    //Keeps track of longest sunString
     let maxSubstring = 0
+    //Holds the temp max value of a subArray. THis gets compared to maxSubtring after each iteration
+    let tempMax = 0;
+    //Servers as somewhat of a reset for variable i. 
+    let j = 0;
 
     for(let i = 0; i < arr.length; i++){
 
         if(!freqCounter[arr[i]]){
+            //If key does not exist in obj set it equal to 1.
             freqCounter[arr[i]] = 1;
+            //Add 1 to temp max.
+            tempMax++
+
+
         }else {
-            console.log(arr[i] + " already exists")
+            //This runs if key is found in obj.
+            //Clears object
+            freqCounter = {};
+            //add 1 to j
+            j++
+            //Set i to j so it starts of on the value of the array
+            i = j;
+            i = i - 1 
+            //reset tempMax to zero.
+            tempMax = 0;
+            
         }
-        
+        //Compare if maxSubstrin is < or > then tem pax. It will only change if tempMax is higher
+        maxSubstring = Math.max(maxSubstring, tempMax)
+      
     }
-    console.log(freqCounter)
+    console.log(maxSubstring)
+    return maxSubstring;
 
 }
 
-findLongestSubstring('') // 0
-findLongestSubstring('rithmschol') // 7
+// findLongestSubstring('') // 0
+// findLongestSubstring('rithmschol') // 7
+findLongestSubstring('thecatinthehat') // 7
