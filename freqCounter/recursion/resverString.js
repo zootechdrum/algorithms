@@ -3,15 +3,19 @@
 
 function reverse(str){
 
-    const lengthOfarray = str.length - 1;
+    let lengthOfarray = str.length - 1;
+    let answerArray = [];
 
     function helper(input){
         if(lengthOfarray === 0){
+          answerArray.push(str[lengthOfarray])
             return;
         }
+        answerArray.push(str[lengthOfarray])
         helper(--lengthOfarray)
     }
-    helper(lengthOfarray);_
+    helper(lengthOfarray);
+    return answerArray.join('')
  }
 
 
