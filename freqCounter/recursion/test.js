@@ -3,3 +3,4 @@ function testing(){
     console.log(arr[0])
 
 }
+testing()
