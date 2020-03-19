@@ -17,13 +17,7 @@ function checkDivisors(arr) {
     return false
 }
 
-  
-  
-  
-    // ----------- End Code Area -----------
-  
-  
-  
+    
   // This should console log true
   console.log(checkDivisors([4, 35, 3, 9, 22, 10]));
   
