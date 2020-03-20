@@ -7,7 +7,7 @@ def sort(arr , cond):
                     arr[i] = arr[j]
                     arr[j] = temp
             else:
-                if(arr[i] > arr[j]):
+                if(arr[i] < arr[j]):
                     temp = arr[i]
                     arr[i] = arr[j]
                     arr[j] = temp
@@ -29,6 +29,7 @@ def up_down_start(arr):
     assortedEven = sort(evenlist, 'even')
     assortedOdd = sort(oddlist,"odd")
     joined_list = assortedEven + assortedOdd
+    print(joined_list)
     #Concat the two lists. 
     return joined_list
 
