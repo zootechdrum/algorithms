@@ -1,12 +1,19 @@
 
-const reverseWords = (word) => {
+const reverseWords = (message) => {
+
+    // for(let i = 0; i < message.length; i++){
+    //     console.log(message[i])
+    // }
     
-    reverseOrder(0, word, word.length)
+    reverseOrder(0, message, message.length)
 
 }
 
 const reverseOrder = (start, word, end) => {
-    console.log(word)
+    let leftCounter = 0
+    let rightCounter = word.length
+
+    
 
 }
 
