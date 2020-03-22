@@ -2,7 +2,6 @@ const reverseWords = (message) => {
     //We want to initially reverse the lettering in the array
     //with the function below we reverse the lettering in the array.
     reverseOrder(0, message, message.length)
-
     //counter variable that will help in determining where
     //the index should start when we pass into helper function
     let rightPointer = 0;
@@ -19,9 +18,8 @@ const reverseWords = (message) => {
             //the beginning of another word
             rightPointer = i + 1;            
         }
-
     }
-    return message
+    return message.join('')
 }
 
 const reverseOrder = (start, message, end) => {
