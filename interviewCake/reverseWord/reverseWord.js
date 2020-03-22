@@ -6,12 +6,24 @@ const reverseWords = (message) => {
     // }
     
     reverseOrder(0, message, message.length)
+    
 
 }
 
-const reverseOrder = (start, word, end) => {
-    let leftCounter = 0
-    let rightCounter = word.length
+const reverseOrder = (start, message, end) => {
+    let leftPointer = start
+    let rightPointer = end - 1
+
+    while(leftPointer < rightPointer){
+
+        let temp = message[leftPointer]
+
+        message[leftPointer] = message[rightPointer]
+        message[rightPointer] = temp
+        ++leftPointer
+        --rightPointer 
+
+    }
 
     
 
