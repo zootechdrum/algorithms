@@ -1,8 +1,8 @@
 //We have our lists of orders sorted numerically already, 
 //in arrays. Write a function to merge our arrays of orders into one sorted array.
 
-const myArray = [3,4,6,10,11,15];
-const alicesArray = [1,5,8,12,14,19];
+const myArray = [3, 4, 6, 10, 11, 15];
+const alicesArray = [1, 5, 8, 12, 14, 19];
 let comparedPointer = 0;
 let longestPointer = 0
 let longestArr;
@@ -13,39 +13,46 @@ const ansArr = [];
 
 //We have to determine the longest array to make sure we
 //iterate over all numbers
-if( myArray.length >= alicesArray.length){
+if (myArray.length >= alicesArray.length) {
     longestArr = myArray
     comparedArr = alicesArray
-}else{
+} else {
     longestArr = alicesArray
     comparedArr = myArray
 }
-
-//We are not iterating over all items
-
- let totalArrayMerges = longestArr.length + comparedArr.length
+//The variable below adds up the total length of both of our arrays
+let totalArrayMerges = longestArr.length + comparedArr.length
 
 
 const mergeArrays = (arr1, arr2) => {
-    while(ansArr.length < totalArrayMerges){
 
-        if(longestArr[longestPointer] < comparedArr[comparedPointer]){
-        ansArr.push(longestArr[longestPointer])
-        ++longestPointer
-    }else if(comparedArr[comparedPointer] < longestArr[longestPointer] ){
-        ansArr.push(comparedArr[comparedPointer])
-        ++comparedPointer
-    }
-
-        if(longestPointer === longestArr.length || comparedPointer === comparedArr.length){
-            if(comparedArr[comparedPointer + 1]){
-                ansArr.push(comparedArr[comparedPointer + 1])
-            }else{
-                ansArr.push(longestArr[longestPointer + 1 ])
+    //While our ans array length is less than the combined total of both of our arrays
+    //loop
+    while (ansArr.length < totalArrayMerges) {
+        //If our longesArr index is less then the compared array
+        if (longestArr[longestPointer] < comparedArr[comparedPointer]) {
+            //push that value to our ansArr array
+            ansArr.push(longestArr[longestPointer])
+            //increase pointer by one
+            ++longestPointer
+            //Ele if its the other way around do the same for comparedPointer
+        } else if (comparedArr[comparedPointer] < longestArr[longestPointer]) {
+            ansArr.push(comparedArr[comparedPointer])
+            ++comparedPointer
+        }
+        //If at any point one of out pointers reaches the end of the list
+        //We know there is one item left to be pushed into our ans array.
+        if (longestPointer === longestArr.length || comparedPointer === comparedArr.length) {
+            //Checks if the value is not equal to undefined 
+            if (comparedArr[comparedPointer]) {
+                ansArr.push(comparedArr[comparedPointer])
+            } else {
+                ansArr.push(longestArr[longestPointer])
             }
 
         }
-}
+    }
+    return ansArr;
 }
 
 mergeArrays(myArray, alicesArray)
