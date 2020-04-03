@@ -2,12 +2,9 @@
 //integer except the integer at the index. 
 
 
-const highestProduct = (intArr , index) => {
-    //Keeps track of multiple numbers that came before that
-    //Index
-    const allNumbersBefore = [];
-    const allNumbersAfter = [];
+const highestProduct = (intArr) => {
 
+    const ansArr = [];
 
     //We set currentProduct to 1 because
     // there are no numbers that came before the zeroth index
@@ -15,19 +12,18 @@ const highestProduct = (intArr , index) => {
     let currentProduct = 1;
 
     for(let i = 0; i < intArr.length; i++){
-        allNumbersBefore[i] = currentProduct
+        ansArr[i] = currentProduct
         currentProduct *= intArr[i]
     }
 
+
+//this loop is to find out the product after each index. 
     let currentProductForAfter = 1
+
     for(let j = intArr.length - 1; j >= 0 ; j--){
-        allNumbersAfter[j] = currentProductForAfter
+        ansArr[j] *= currentProductForAfter
         currentProductForAfter *= intArr[j]
     }
-
-    console.log(allNumbersAfter[index] * allNumbersBefore[index])
-
-    
 }
 
-highestProduct([3,1,2,5,6,4] , 1)
+highestProduct([3,1,2,5,6,4])
