@@ -7,7 +7,7 @@ function movieFlight(durationOfFlight, movies) {
         //We chose our first movie
         let firstMovie = movies[i];
 
-        let secondMovie = durationOfFlight - movies[i]; 
+        let secondMovie = durationOfFlight - firstMovie[i]; 
 
         if(movieLengths.has(secondMovie)){
             return true
